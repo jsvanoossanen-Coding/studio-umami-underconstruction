@@ -1,0 +1,108 @@
+/* Grid container */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+}
+
+/* Linker kolom */
+.left {
+  background-color: #2f3c46;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Content + footer */
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Tekst in het midden */
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.left h1 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+}
+
+.left h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.left h3 {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* CTA knop */
+.cta-button {
+  display: inline-block;
+  margin-top: o,5 rem;
+  padding: 0.8rem 1.5rem;
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  border-radius: 25px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  text-align: center;
+  white-space: nowrap; /* alles op 1 regel */
+  padding: 0rem ;
+  bottom: 1rem;        /* tegen de onderkant */
+  right: 1rem;         /* rechts uitlijnen */
+  width: 100%; 
+  left: 0;
+}
+
+/* Rechter kolom */
+.right {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  max-width: 70%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* 📱 Mobiel view */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr; /* kolommen worden onder elkaar */
+  }
+
+  .left, .right {
+    height: 50vh; /* ieder de helft van het scherm */
+  }
+
+  .logo {
+    max-width: 40%;
+  }
+
+  .footer {
+    font-size: 0.7rem;
+    padding-bottom: 0rem;
+  }
+}
